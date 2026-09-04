@@ -110,10 +110,12 @@ function renderTracker(subjectList) {
                 <p class="overall-title">Overall Attendance</p>
                 <h2 class="overall-value">${overallPct}%</h2>
             </div>
+            
         </div>
         <div class="overall-right-box">
             <p class="overall-right-title">Target: 75%</p>
             <p class="overall-right-sub">Need ~${totalClassesNeeded} classes</p>
+            <p></p>
         </div>
     `;
     container.appendChild(overallCard);
