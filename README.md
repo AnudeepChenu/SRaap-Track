@@ -1,11 +1,9 @@
-# Sraap Track
+# SRaap Track 🚀
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-UI-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Styles-1572B6?logo=css3&logoColor=white)
 ![Chrome Extension](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-4285F4?logo=googlechrome&logoColor=white)
-
-# SRaap Track 🚀
 
 A lightweight, modern Chrome Extension designed for SRU students to effortlessly track their attendance, calculate safe skip limits, and monitor progress toward the mandatory 75% attendance threshold.
 
