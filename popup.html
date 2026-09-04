@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    :root {
+      --navy-header: #0a1128;
+      --bg-main: #f4f6f9;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent-blue: #38bdf8;
+    }
+
+    body {
+      width: 380px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+    }
+
+    .header {
+      background-color: var(--navy-header);
+      color: white;
+      padding: 16px;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .app-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .app-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .app-subtitle {
+      font-size: 11px;
+      color: #94a3b8;
+      margin: 2px 0 0 0;
+    }
+
+    .target-pill {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .content-container {
+      padding: 12px;
+    }
+
+    .subject-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .progress-ring-container {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+    }
+
+    .progress-ring {
+      transform: rotate(-90deg);
+    }
+
+    .progress-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .subject-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .subject-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0 0 8px 0;
+      line-height: 1.35;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #fef2f2;
+      color: #dc2626;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .status-badge.safe {
+      background: #f0fdf4;
+      color: #16a34a;
+    }
+
+    .overall-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .overall-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .overall-icon-box {
+      width: 40px;
+      height: 40px;
+      background: #eff6ff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+      font-size: 18px;
+    }
+
+    .overall-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .overall-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 2px 0 0 0;
+    }
+
+    .overall-right-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-align: right;
+    }
+
+    .overall-right-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .overall-right-sub {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin: 2px 0 0 0;
+    }
+
+    .error-state {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-title">
+        <img src="icon128.png" class="app-logo" alt="Logo">
+        <div>
+          <h1 class="app-title">SRaap Track</h1>
+        </div>
+      </div>
+      <div class="target-pill">Target: 75%</div>
+    </div>
+  </div>
+
+  <div class="content-container" id="container">
+    <div class="error-state">Loading attendance data...</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
