@@ -1,9 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "SRU Attendance Tracker",
+  "name": "SRaap Track",
   "version": "2.2",
   "description": "Tracks 75% attendance goals for SRU students.",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://sraap.in/*"
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
